@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<h1>View Note</h1>
+<p>
+    <a href="/note/list">Note list</a>
+</p>
+    <table class="zui-table">
+        <tr>
+            <td>
+                <h3 style="text-align: center">Note</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>Title: <span th:text="${note.title}"></span></td>
+        </tr>
+        <tr>
+            <td>Content: <span th:text="${note.content}"></span></td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{/note/edit/__${note.id}__ }">Edit</a>
+                |
+                <a th:href="@{/note/delete/__${note.id}__ }">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

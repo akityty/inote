@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<h1>Create Note</h1>
+<p>
+    <a th:href="@{/note/list}">note list</a>
+</p>
+<form th:action="@{/note/create}" th:object="${noteForm}" method="post">
+    <table class="zui-table">
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" th:field="*{title}"/></td>
+        </tr>
+        <tr>
+            <td>Content:</td>
+            <td>
+                <br>
+                <input type="text" th:field="*{content}">
+            </td>
+        <tr>
+            <td>NoteType:</td>
+            <td>
+                <select th:field="*{noteType}">
+                    <option th:each="noteType: ${noteTypes}" th:value="${noteType.id}"
+                            th:text="${noteType.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Save Note"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

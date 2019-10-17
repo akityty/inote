@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<h1>Note List</h1>
+<br/>
+<table class="zui-table">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>NoteType</th>
+        <th>Content</th>
+        <th>Edit|Delete</th>
+    </tr>
+    <th:block th:each="note : ${notes}">
+        <tr>
+            <td th:text="${note.id}"></td>
+            <td th:text="${note.title}"></td>
+            <td th:text="${note.content}"></td>
+            <td th:text="${note.noteType.name}"></td>
+            <td><a th:href="@{/note/edit/__${note.id}__ }">Edit</a>
+                |
+                <a th:href="@{/note/delete/__${note.id}__ }">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+<div>
+   <!-- <a th:href="@{${'/note/title?title='}+${title}(page=${notes.number - 1})}" th:if="${notes.hasPrevious()}">Previous</a>-->
+    <a th:href="@{${'/note/noteType?id='}+${id}(page=${notes.number - 1})}" th:if="${notes.hasPrevious()}">Previous</a>
+    <span th:text="${notes.number + 1}"></span>/<span th:text="${notes.totalPages}"></span>
+    <a th:href="@{${'/note/noteType?id='}+${id}(page=${notes.number + 1})}" th:if="${notes.hasNext()}">Next</a>
+    <!-- <a th:href="@{'/note/view'(page=${notes.number + 1})}" th:if="${notes.hasNext()}">Next</a>-->
+</div>
+</body>
+</html>
