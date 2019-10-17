@@ -1,13 +1,13 @@
 package konkon.service.impl;
 
 import konkon.model.NoteType;
-import konkon.repository.TypeNoteRepository;
+import konkon.repository.NoteTypeRepository;
 import konkon.service.NoteTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class NoteTypeServiceImpl implements NoteTypeService {
   @Autowired
-  private TypeNoteRepository typeNoteRepository;
+  private NoteTypeRepository typeNoteRepository;
 
   @Override
   public Iterable<NoteType> findAll() {

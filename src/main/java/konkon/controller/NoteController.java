@@ -13,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
+
 @Controller
 public class NoteController {
   @Autowired
@@ -41,7 +43,7 @@ public class NoteController {
   }
 
   @PostMapping("/note/create")
-  public ModelAndView saveEmployee(@ModelAttribute NoteForm note) {
+  public ModelAndView saveEmployee(@ModelAttribute NoteForm note) throws IOException {
     noteService.save(note);
     return new ModelAndView("redirect:/note/list");
   }
@@ -59,7 +61,7 @@ public class NoteController {
   }
 
   @PostMapping("/note/edit")
-  public ModelAndView editNote(@ModelAttribute NoteForm noteForm) {
+  public ModelAndView editNote(@ModelAttribute NoteForm noteForm) throws IOException {
     noteService.save(noteForm);
     return new ModelAndView("redirect:/note/list");
   }
@@ -126,4 +128,21 @@ public class NoteController {
     modelAndView.addObject("title", title);
     return modelAndView;
   }
+  @GetMapping("/note/writeJSON")
+  public ModelAndView writeJSON(){
+
+    noteService.writeJSON();
+    ModelAndView modelAndView = new ModelAndView("redirect:/note/list");
+    modelAndView.addObject("message","Export successful");
+    return modelAndView;
+  }
+
+  @GetMapping("/note/importJSON")
+  public ModelAndView importJSON(){
+    noteService.importJSON();
+    ModelAndView modelAndView = new ModelAndView("redirect:/note/list");
+    modelAndView.addObject("message","Import successful");
+    return modelAndView;
+  }
+
 }

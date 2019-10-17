@@ -62,4 +62,14 @@ public class Note {
   public void setNoteType(NoteType noteType) {
     this.noteType = noteType;
   }
+
+  @Override
+  public String toString() {
+    return "Note{" +
+            "id=" + id +
+            ", title='" + title + '\'' +
+            ", content='" + content + '\'' +
+            ", noteType=" + noteType +
+            '}';
+  }
 }

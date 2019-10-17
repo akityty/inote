@@ -3,8 +3,15 @@
 <head th:replace="/layout :: head">
 <body>
 <a th:href="@{/note/create}">Create new Note</a>
+<th:block th:if="${message}">
+    <p th:text="${message}" style="color: red"></p>
+</th:block>
 <h1>Note List</h1>
 <br/>
+<p>
+    <a th:href="@{/note/importJSON}">Insert note from .json file</a>
+</p>
+<br>
 <table class="zui-table">
 
     <tr>
@@ -52,7 +59,12 @@
                 <a th:href="@{/note/delete/__${note.id}__ }">Delete</a></td>
         </tr>
     </th:block>
+    <tr>
+        <td><a th:href="@{/note/writeJSON}">Export JSON</a></td>
+    </tr>
 </table>
+
+
 <div>
     <a th:href="@{'/note/list'(page=${notes.number - 1})}" th:if="${notes.hasPrevious()}">Previous</a>
     <span th:text="${notes.number + 1}"></span>/<span th:text="${notes.totalPages}"></span>
