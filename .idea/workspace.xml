@@ -12,7 +12,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/konkon/controller/NoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/konkon/controller/NoteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/inote-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/inote-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/konkon/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/konkon/controller/NoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/konkon/service/impl/NoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/konkon/service/impl/NoteServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -238,6 +239,7 @@
       <workItem from="1571290229250" duration="14397000" />
       <workItem from="1571313354830" duration="7070000" />
       <workItem from="1571324933462" duration="20754000" />
+      <workItem from="1571363269903" duration="908000" />
     </task>
     <servers />
   </component>
@@ -249,21 +251,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/konkon/service/impl/NoteServiceImpl.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

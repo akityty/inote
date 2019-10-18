@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Controller
@@ -28,10 +29,13 @@ public class NoteController {
   }
 
   @GetMapping("/note/list")
-  public ModelAndView showListNote(@PageableDefault(value = 3) Pageable pageable) {
+  public ModelAndView showListNote(@PageableDefault(value = 3) Pageable pageable, HttpServletRequest request) {
      Page<Note> notes = noteService.findAll(pageable);
     ModelAndView modelAndView = new ModelAndView("/note/list");
     modelAndView.addObject("notes", notes);
+    if (request.getParameter("message")!= null){
+      modelAndView.addObject("message",request.getParameter("message"));
+    }
     return modelAndView;
   }
 

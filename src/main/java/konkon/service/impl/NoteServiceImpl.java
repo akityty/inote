@@ -134,7 +134,7 @@ public class NoteServiceImpl implements NoteService {
     //JSON parser object to parse read file
     JSONParser jsonParser = new JSONParser();
 
-    try (FileReader reader = new FileReader("/home/konkon/Desktop/aa/ Import.json")) {
+    try (FileReader reader = new FileReader("/home/konkon/Desktop/aa/Import.json")) {
       //Read JSON file
       Object obj = jsonParser.parse(reader);
 
@@ -147,6 +147,7 @@ public class NoteServiceImpl implements NoteService {
         Note note = parseNoteObject(noteObject);
         noteRepository.save(note);
       }
+
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {
